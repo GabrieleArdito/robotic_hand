@@ -1,44 +1,44 @@
 #include <Servo.h>
-Servo myservo_pollice;
-Servo myservo_indice;
-Servo myservo_medio;
-Servo myservo_anulare;
-Servo myservo_mignolo;
-int pollice;
-int indice;
-int medio;
-int anulare;
-int mignolo;
+Servo myservo_thumb;
+Servo myservo_index;
+Servo myservo_middle;
+Servo myservo_ring;
+Servo myservo_pinky;
+int thumb;
+int index;
+int middle;
+int ring;
+int pinky;
 
 void setup() {
-Serial.begin(9600);
-myservo_pollice.attach(9);
-myservo_indice.attach(10);
-myservo_medio.attach(11);
-myservo_anulare.attach(12);
-//myservo_mignolo.attach(13);
-
+  Serial.begin(9600);
+  myservo_thumb.attach(9);
+  myservo_index.attach(10);
+  myservo_middle.attach(11);
+  myservo_ring.attach(12);
+  //myservo_pinky.attach(13);
 }
 
 void loop() {
-pollice = analogRead(A0);
-indice = analogRead(A1);
-medio = analogRead(A2);
-anulare = analogRead(A3);
-mignolo = analogRead(A4);
-Serial.println(mignolo);
+  thumb = analogRead(A0);
+  index = analogRead(A1);
+  middle = analogRead(A2);
+  ring = analogRead(A3);
+  pinky = analogRead(A4);
+  Serial.println(pinky);
 
-pollice = map(pollice, 0, 3000, 0, 1600);
-indice = map(indice,  0, 6000, 0, 800);
-medio = map(medio,  0, 6000, 0, 800);
-anulare = map(anulare,  0, 6000, 0, 719);
-mignolo = map(mignolo,  0, 6000, 0, 719);
+  //set the values according to your preferences
+  thumb = map(thumb, 0, 3000, 0, 1600); 
+  index = map(index,  0, 6000, 0, 800);
+  middle = map(middle,  0, 6000, 0, 800);
+  ring = map(ring,  0, 6000, 0, 719);
+  pinky = map(pinky,  0, 6000, 0, 719);
 
-myservo_pollice.write(pollice);
-myservo_indice.write(indice);
-myservo_medio.write(medio);
-myservo_anulare.write(anulare);
-myservo_mignolo.write(mignolo);
+  myservo_thumb.write(thumb);
+  myservo_index.write(index);
+  myservo_middle.write(middle);
+  myservo_ring.write(ring);
+  myservo_pinky.write(pinky);
 
-delay(150);
+  delay(150);
 }
