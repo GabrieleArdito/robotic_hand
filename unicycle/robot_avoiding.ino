@@ -1,5 +1,3 @@
-#include <Servo.h>
-
 #define echoPin 8
 #define trigPin 9
 #define MRa 6               // Right motor 1st pin PWM
@@ -10,7 +8,7 @@
 long duration;
 long distance;
 
-int speed = 255; // Velocità dei motori (da 0 a 255)
+int speed = 255; //speed of motors (0-255)
 
 void setup() {
   pinMode(trigPin, OUTPUT);
